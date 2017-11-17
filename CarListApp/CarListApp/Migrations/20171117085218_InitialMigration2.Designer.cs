@@ -8,9 +8,10 @@ using CarListApp.Entities;
 namespace CarListApp.Migrations
 {
     [DbContext(typeof(CarListContext))]
-    partial class CarListContextModelSnapshot : ModelSnapshot
+    [Migration("20171117085218_InitialMigration2")]
+    partial class InitialMigration2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.4")
@@ -33,7 +34,7 @@ namespace CarListApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("licence_plates");
+                    b.ToTable("Cars");
                 });
         }
     }

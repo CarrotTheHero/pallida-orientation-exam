@@ -8,9 +8,10 @@ using CarListApp.Entities;
 namespace CarListApp.Migrations
 {
     [DbContext(typeof(CarListContext))]
-    partial class CarListContextModelSnapshot : ModelSnapshot
+    [Migration("20171117085415_InitialMigration3")]
+    partial class InitialMigration3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.4")
