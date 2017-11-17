@@ -17,29 +17,29 @@
     @{
         if (@Model != null)
         {
-                    <table border="1">
-                        <thead>
-                            <tr>
-                                <th>Licence Plate</th>
-                                <th>Brand</th>
-                                <th>Model</th>
-                                <th>Color</th>
-                                <th>Year</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model)
-                            {
-                                <tr>
-                                    <td>@item.Plate</td>
-                                    <td><a href="/search/@item.Car_brand">@item.Car_brand</a></td>
-                                    <td>@item.Car_model</td>
-                                    <td>@item.Color</td>
-                                    <td>@item.Year</td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Licence Plate</th>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Color</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Plate</td>
+                            <td><a href="/search/@item.Car_brand">@item.Car_brand</a></td>
+                            <td>@item.Car_model</td>
+                            <td>@item.Color</td>
+                            <td>@item.Year</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         }
     }
 </body>
