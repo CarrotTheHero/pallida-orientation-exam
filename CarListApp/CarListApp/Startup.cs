@@ -20,6 +20,7 @@ namespace CarListApp
             services.AddMvc();
             services.AddDbContext<CarListContext>(options => options.UseSqlServer("Data Source=(localdb)\\ProjectsV13;Initial Catalog=carlist;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"));
             services.AddScoped<CarListRepository>();
+            services.AddScoped<CarListContext>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)

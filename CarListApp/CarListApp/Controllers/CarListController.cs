@@ -3,17 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using CarListApp.Repositories;
 
 namespace CarListApp.Controllers
 {
     public class CarListController : Controller
     {
-        // GET: /<controller>/
+        CarListRepository CarListRepository;
+
+        public CarListController(CarListRepository carListRepository)
+        {
+            CarListRepository = carListRepository;
+        }
+
+        [Route("/search")]
+        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
+
+        [Route("/search/{brand}")]
+        [HttpGet]
+        public IActionResult Index([FromQuery] string car_brand)
+        {
+            
+        }
+
+        [Route("/api/search/{brand}")]
+        [HttpGet]
+        public IActionResult Index(string car_brand)
+        {
+            return Json();
+        }
     }
+}
 }
