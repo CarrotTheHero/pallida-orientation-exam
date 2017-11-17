@@ -23,12 +23,12 @@ namespace CarListApp.Controllers
             return View("Index", CarListRepository.CarSearcher(plate));
         }
 
-        //[Route("/search/{brand}")]
-        //[HttpGet]
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
+        [Route("/search/{brand}")]
+        [HttpGet]
+        public IActionResult Index(string brand)
+        {
+            return View("Index", CarListRepository.BrandSearcher(brand));
+        }
 
         //[Route("/api/search/{brand}")]
         //[HttpGet]

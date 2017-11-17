@@ -16,14 +16,14 @@ namespace CarListApp.Repositories
             CarListContext = carListContext;
         }
 
-        public List<Car> GetAll()
-        {
-            return CarListContext.Licence_plates.ToList();
-        }
-
         public List<Car> CarSearcher(string plate)
         {
             return CarListContext.Licence_plates.Where(x => x.Plate.Contains(plate)).ToList();
+        }
+
+        public List<Car> BrandSearcher(string brand)
+        {
+            return CarListContext.Licence_plates.Where(x => x.Car_brand.Equals(brand)).ToList();
         }
     }
 }
