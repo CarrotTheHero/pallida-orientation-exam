@@ -12,14 +12,12 @@
             <button type="submit">Search</button>
         </div>
     </form>
-    <div><a href="/search?Plate=rb">Police</a></div>
-    <div><a href="/search?Plate=dt">Diplomat</a></div>
+    <p><a href="/search?Plate=rb">Police</a></p>
+    <p><a href="/search?Plate=dt">Diplomat</a></p>
     @{
         if (@Model != null)
         {
-            <div>
-                <div>
-                    <table>
+                    <table border="1">
                         <thead>
                             <tr>
                                 <th>Licence Plate</th>
@@ -42,9 +40,6 @@
                             }
                         </tbody>
                     </table>
-                </div>
-            </div>
-
         }
     }
 </body>
