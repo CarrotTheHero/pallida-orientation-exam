@@ -1,15 +1,21 @@
-﻿@model CarListApp.Models.Car
+﻿@model List<CarListApp.Models.Car>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 </head>
 <body>
-    @using (Html.BeginForm())
-    {
-        <p>
-            @Html.TextBox("Search")
-            <input type="search" value="Search" />
-        </p>
-    }
+    <table border="1">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Plate</td>
+                <td>@item.Car_brand</td>
+                <td>@item.Car_model</td>
+                <td>@item.Color</td>
+                <td>@item.Year</td>
+            </tr>
+        }
+    </table>
 </body>
 </html>

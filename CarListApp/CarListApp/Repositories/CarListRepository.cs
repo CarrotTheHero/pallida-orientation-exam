@@ -1,4 +1,5 @@
 ﻿using CarListApp.Entities;
+using CarListApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,11 @@ namespace CarListApp.Repositories
         public CarListRepository(CarListContext carListContext)
         {
             CarListContext = carListContext;
+        }
+
+        public List<Car> GetAll()
+        {
+            return CarListContext.Licence_plates.ToList();
         }
     }
 }

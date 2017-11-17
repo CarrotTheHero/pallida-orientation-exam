@@ -14,6 +14,6 @@ namespace CarListApp.Entities
 
         }
 
-        public DbSet<Car> licence_plates { get; set; }
+        public DbSet<Car> Licence_plates { get; set; }
     }
 }

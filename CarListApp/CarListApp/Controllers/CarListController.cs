@@ -20,22 +20,7 @@ namespace CarListApp.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
-        }
-
-        [Route("/search/{brand}")]
-        [HttpGet]
-        public IActionResult Index([FromQuery] string car_brand)
-        {
-            
-        }
-
-        [Route("/api/search/{brand}")]
-        [HttpGet]
-        public IActionResult Index(string car_brand)
-        {
-            return Json();
+            return View(CarListRepository.GetAll());
         }
     }
-}
 }
