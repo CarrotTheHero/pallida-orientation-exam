@@ -21,7 +21,7 @@ namespace CarListApp.Repositories
             return CarListContext.Licence_plates.ToList();
         }
 
-        public List<Car> GetSearchedCars(string plate)
+        public List<Car> CarSearcher(string plate)
         {
             return CarListContext.Licence_plates.Where(x => x.Plate.Contains(plate)).ToList();
         }
