@@ -28,11 +28,11 @@ namespace CarListApp.Repositories
 
         public List<Car> PoliceSearcher()
         {
-            return CarListContext.Licence_plates.Where(x => x.Plate.Contains("rb")).ToList();
+            return CarListContext.Licence_plates.Where(x => x.Plate.StartsWith("rb")).ToList();
         }
         public List<Car> DiplomatSearcher()
         {
-            return CarListContext.Licence_plates.Where(x => x.Plate.Contains("dt")).ToList();
+            return CarListContext.Licence_plates.Where(x => x.Plate.StartsWith("dt")).ToList();
         }
     }
 }
