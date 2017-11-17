@@ -16,11 +16,32 @@ namespace CarListApp.Controllers
             CarListRepository = carListRepository;
         }
 
-        [Route("/search")]
+        [Route("/")]
         [HttpGet]
         public IActionResult Index()
         {
             return View(CarListRepository.GetAll());
         }
+        
+        [Route("/search")]
+        [HttpGet]
+        public IActionResult SearchResult(string plate)
+        {
+            return View("Index", CarListRepository.GetSearchedCars(plate));
+        }
+
+        //[Route("/search/{brand}")]
+        //[HttpGet]
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
+
+        //[Route("/api/search/{brand}")]
+        //[HttpGet]
+        //public IActionResult Index()
+        //{
+        //    return Json(new object());
+        //}
     }
 }
